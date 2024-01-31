@@ -46,7 +46,7 @@ export class CatsService {
       throw new BadRequestException('Cat not found');
     }
 
-    let breed;
+    let breed: any;
 
     if (updateCatDto.breed) {
       breed = await this.breedsRepository.findOneBy({
