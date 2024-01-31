@@ -6,7 +6,7 @@ export class User {
   id: number;
 
   @Column({ length: 500 })
-  name: string;
+  username: string;
 
   @Column({ unique: true, nullable: false })
   email: string;
@@ -14,8 +14,17 @@ export class User {
   @Column({ nullable: false })
   password: string;
 
-  @Column({ default: 'user' })
-  rol: string;
+  @Column({ default: 'admin' })
+  role: string;
+
+  @Column({ nullable: false })
+  firstName: string;
+
+  @Column({ nullable: false })
+  lastName: string;
+
+  @Column({ nullable: false })
+  age: number;
 
   @DeleteDateColumn()
   deletedAt: Date;
