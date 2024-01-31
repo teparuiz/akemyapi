@@ -7,8 +7,6 @@ import { Repository } from 'typeorm';
 
 @Injectable()
 export class BreedsService {
-
-
   constructor(
     @InjectRepository(Breed)
     private readonly breedsRepository: Repository<Breed>,
@@ -30,7 +28,7 @@ export class BreedsService {
     return `This action updates a #${id} breed`;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} breed`;
+  async remove(id: number) {
+    return await this.breedsRepository.softDelete(id);
   }
 }
