@@ -44,6 +44,15 @@ export class AuthService {
 
     return {
       message: 'User created successfully',
+      status: true,
+      data: {
+        username,
+        firstName,
+        lastName,
+        age,
+        role,
+        email,
+      }
     };
   }
 
@@ -64,6 +73,7 @@ export class AuthService {
     const token = await this.jwtService.signAsync(payload);
 
     return {
+      status: true,
       token: token,
       email: user.email,
     };
