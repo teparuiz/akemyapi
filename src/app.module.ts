@@ -6,6 +6,7 @@ import { ProvidersModule } from './providers/providers.module';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { CashCutModule } from './cash-cut/cash-cut.module';
+import { ProductsModule } from './products/products.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { CashCutModule } from './cash-cut/cash-cut.module';
     UsersModule,
     AuthModule,
     CashCutModule,
+    ProductsModule,
   ],
   controllers: [],
 })
