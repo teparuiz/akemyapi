@@ -5,6 +5,7 @@ import { BreedsModule } from './breeds/breeds.module';
 import { ProvidersModule } from './providers/providers.module';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
+import { CashCutModule } from './cash-cut/cash-cut.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { AuthModule } from './auth/auth.module';
     ProvidersModule,
     UsersModule,
     AuthModule,
+    CashCutModule,
   ],
   controllers: [],
 })

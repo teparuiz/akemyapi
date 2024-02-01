@@ -42,17 +42,18 @@ export class AuthService {
       password: hashedPassword,
     });
 
+    const userCreate = await this.usersService.findOneByEmail(email);
+
+    const payload = { userCreate: userCreate };
+    const token = await this.jwtService.signAsync(payload);
+
     return {
       message: 'User created successfully',
       status: true,
       data: {
-        username,
-        firstName,
-        lastName,
-        age,
-        role,
-        email,
-      }
+        user: userCreate,
+        token: token,
+      },
     };
   }
 
@@ -73,9 +74,12 @@ export class AuthService {
     const token = await this.jwtService.signAsync(payload);
 
     return {
+      message: 'Logged in successfully',
       status: true,
-      token: token,
-      email: user.email,
+      data: {
+        user: user,
+        token: token,
+      },
     };
   }
 }
