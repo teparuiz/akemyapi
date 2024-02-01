@@ -35,6 +35,12 @@ export class UsersService {
       throw new BadRequestException('User not found');
     }
 
+    const updatedEmail: string = UpdateUserDto.email;
+
+    if (await this.findOneByEmail(updatedEmail)) {
+      throw new BadRequestException('Email already exists');
+    }
+
     return await this.usersRepository.save({
       ...user,
       ...UpdateUserDto,
