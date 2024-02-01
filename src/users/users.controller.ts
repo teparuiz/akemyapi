@@ -40,6 +40,12 @@ export class UsersController {
     return this.usersService.update(id, updateUserDto);
   }
 
+  @Patch('changerole/:id')
+  @UseGuards(AuthGuard)
+  updateRole(@Param('id') id: number, @Body() updateUserDto: UpdateUserDto) {
+    return this.usersService.updateRole(id, updateUserDto);
+  }
+
   @Delete(':id')
   @UseGuards(AuthGuard)
   remove(@Param('id') id: number) {

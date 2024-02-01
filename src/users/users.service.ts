@@ -47,6 +47,19 @@ export class UsersService {
     });
   }
 
+  async updateRole(id: number, UpdateUserDto: UpdateUserDto) {
+    const user = await this.usersRepository.findOneBy({ id });
+
+    if (!user) {
+      throw new BadRequestException('User not found');
+    }
+
+    return await this.usersRepository.save({
+      ...user,
+      ...UpdateUserDto,
+    });
+  }
+
   async remove(id: number) {
     return await this.usersRepository.softDelete(id);
   }
