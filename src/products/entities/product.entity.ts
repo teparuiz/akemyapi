@@ -30,6 +30,9 @@ export class Product {
   @Column()
   quantity: number;
 
+  @Column()
+  unity: string;
+
   @DeleteDateColumn()
   deletedAt: Date;
 

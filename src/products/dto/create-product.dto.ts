@@ -19,4 +19,7 @@ export class CreateProductDto {
 
   @IsString()
   category: string;
+
+  @IsString()
+  unity: string;
 }

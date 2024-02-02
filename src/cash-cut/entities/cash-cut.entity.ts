@@ -3,6 +3,8 @@ import {
   DeleteDateColumn,
   Entity,
   PrimaryGeneratedColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
 } from 'typeorm';
 
 @Entity()
@@ -10,9 +12,45 @@ export class CashCut {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ default: '' })
   description: string;
+
+  @Column({ default: '' })
+  comments: string;
+
+  @Column({ nullable: false })
+  user: string;
+
+  @Column({ nullable: false })
+  yesterday: number;
+
+  @Column({ nullable: false })
+  startDay: number;
+
+  @Column({ nullable: false })
+  endDay: number;
+
+  @Column({ nullable: false })
+  kyteSells: number;
+
+  @Column({ nullable: false })
+  credit: number;
+
+  @Column({ nullable: false })
+  cash: number;
+
+  @Column({ nullable: false })
+  diffCashCredit: number;
+
+  @Column({ nullable: false })
+  total: number;
 
   @DeleteDateColumn()
   deleteAt: Date;
+
+  @CreateDateColumn()
+  createAt: Date;
+
+  @UpdateDateColumn()
+  updateAt: Date;
 }
