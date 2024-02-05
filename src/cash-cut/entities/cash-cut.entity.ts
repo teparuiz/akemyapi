@@ -45,6 +45,12 @@ export class CashCut {
   @Column({ nullable: false })
   total: number;
 
+  @Column('json', { nullable: true })
+  shipments: { [key: string]: number };
+
+  @Column('date', { default: () => '(CURRENT_DATE)' })
+  date: Date;
+
   @DeleteDateColumn()
   deleteAt: Date;
 

@@ -7,11 +7,13 @@ import {
   Param,
   Delete,
   UseGuards,
+  Query,
 } from '@nestjs/common';
 import { CashCutService } from './cash-cut.service';
 import { CreateCashCutDto } from './dto/create-cash-cut.dto';
 import { UpdateCashCutDto } from './dto/update-cash-cut.dto';
 import { AuthGuard } from './../auth/auth.guard';
+import { FindCashCutDto } from './dto/find-cash-cut.dto';
 @Controller('cash-cut')
 export class CashCutController {
   constructor(private readonly cashCutService: CashCutService) {}
@@ -24,8 +26,8 @@ export class CashCutController {
 
   @Get()
   @UseGuards(AuthGuard)
-  findAll() {
-    return this.cashCutService.findAll();
+  findAll(@Query() query: FindCashCutDto) {
+    return this.cashCutService.findMany(query);
   }
 
   @Get(':id')

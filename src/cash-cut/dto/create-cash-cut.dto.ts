@@ -1,4 +1,4 @@
-import { IsNumber, IsOptional, IsPositive, IsString } from 'class-validator';
+import { IsDate, IsDateString, IsNumber, IsObject, IsOptional, IsPositive, IsString } from 'class-validator';
 
 export class CreateCashCutDto {
   @IsString()
@@ -32,6 +32,13 @@ export class CreateCashCutDto {
 
   @IsNumber()
   diffCashCredit: number;
+
+  @IsObject()
+  @IsOptional()
+  shipments: { [key: string]: number };
+  
+  @IsDateString()
+  date: Date;
 
   @IsNumber()
   @IsPositive()
