@@ -1,8 +1,12 @@
-Instación de <h2>AKEMY API </h2>
+<h2>AKEMY API </h2>
 
 Instalar la versión más reciente de node, si es Ubuntu usa el gestor nvm para instalar node. 
+# Clonar el repositorio
+git clone git@github.com:teparuiz/akemyapi.git
 
-- Clonar el repositorio e instalar las dependencias con
+# Cambiarse al directorio del proyecto
+cd akemyapi
+
 
  ```bash
  npm run install 
