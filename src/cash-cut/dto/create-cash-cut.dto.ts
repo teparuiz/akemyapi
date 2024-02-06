@@ -1,4 +1,12 @@
-import { IsDate, IsDateString, IsNumber, IsObject, IsOptional, IsPositive, IsString } from 'class-validator';
+import {
+  IsArray,
+  IsDateString,
+  IsNumber,
+  IsObject,
+  IsOptional,
+  IsPositive,
+  IsString,
+} from 'class-validator';
 
 export class CreateCashCutDto {
   @IsString()
@@ -36,9 +44,21 @@ export class CreateCashCutDto {
   @IsObject()
   @IsOptional()
   shipments: { [key: string]: number };
-  
+
   @IsDateString()
   date: Date;
+
+  @IsArray()
+  incomes: [];
+
+  @IsArray()
+  expenses: [];
+
+  @IsObject()
+  tickets: { [key: string]: number };
+
+  @IsObject()
+  coins: { [key: string]: number };
 
   @IsNumber()
   @IsPositive()

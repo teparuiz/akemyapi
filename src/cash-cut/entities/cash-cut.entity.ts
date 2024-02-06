@@ -48,6 +48,18 @@ export class CashCut {
   @Column('json', { nullable: true })
   shipments: { [key: string]: number };
 
+  @Column('json', { nullable: true })
+  incomes: [];
+
+  @Column('json', { nullable: true })
+  expenses: [];
+
+  @Column('json', { nullable: true })
+  tickets: { [key: string]: number };
+
+  @Column('json', { nullable: true })
+  coins: { [key: string]: number };
+
   @Column('date', { default: () => '(CURRENT_DATE)' })
   date: Date;
 

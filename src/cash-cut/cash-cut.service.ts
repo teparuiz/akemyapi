@@ -27,28 +27,26 @@ export class CashCutService {
 
   async findMany(dto: FindCashCutDto) {
     const { user, date, startDate, endDate } = dto;
-  
+
     const conditions: Record<string, any> = {};
-  
+
     if (user !== undefined && user !== null && user !== '') {
       conditions.user = user;
     }
-  
 
-    if(date !== undefined && date !== null) {
+    if (date !== undefined && date !== null) {
       conditions.date = date;
     }
 
     if (startDate !== undefined && endDate !== undefined) {
       conditions.date = Between(startDate, endDate);
     }
-  
+
     return await this.cashCutsRepository.find({
       where: conditions,
     });
   }
-  
-  
+
   async update(id: number, updateCashCutDto: UpdateCashCutDto) {
     const cashcut = await this.cashCutsRepository.findOneBy({ id });
 
