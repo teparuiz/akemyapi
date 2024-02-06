@@ -1,4 +1,5 @@
 import {
+  ArrayNotEmpty,
   IsArray,
   IsDateString,
   IsNumber,
@@ -49,9 +50,11 @@ export class CreateCashCutDto {
   date: Date;
 
   @IsArray()
+  @ArrayNotEmpty()
   incomes: [];
 
   @IsArray()
+  @ArrayNotEmpty()
   expenses: [];
 
   @IsObject()

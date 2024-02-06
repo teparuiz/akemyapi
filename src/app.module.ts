@@ -7,6 +7,7 @@ import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { CashCutModule } from './cash-cut/cash-cut.module';
 import { ProductsModule } from './products/products.module';
+import { StoreModule } from './store/store.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { ProductsModule } from './products/products.module';
     AuthModule,
     CashCutModule,
     ProductsModule,
+    StoreModule,
   ],
   controllers: [],
 })
