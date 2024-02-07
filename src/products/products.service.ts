@@ -19,11 +19,11 @@ export class ProductsService {
     return await this.productsRepository.find();
   }
 
-  async findOne(id: number) {
+  async findOne(id: string) {
     return await this.productsRepository.findOneBy({ id });
   }
 
-  async update(id: number, updateProductDto: UpdateProductDto) {
+  async update(id: string, updateProductDto: UpdateProductDto) {
     const product = await this.productsRepository.findOneBy({ id });
 
     if (!product) {
@@ -35,7 +35,7 @@ export class ProductsService {
     });
   }
 
-  async remove(id: number) {
+  async remove(id: string) {
     return await this.productsRepository.softDelete(id);
   }
 }
