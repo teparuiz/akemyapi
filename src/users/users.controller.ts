@@ -30,25 +30,25 @@ export class UsersController {
 
   @Get(':id')
   @UseGuards(AuthGuard)
-  findOne(@Param('id') id: number) {
+  findOne(@Param('id') id: string) {
     return this.usersService.findOne(id);
   }
 
   @Patch(':id')
   @UseGuards(AuthGuard)
-  update(@Param('id') id: number, @Body() updateUserDto: UpdateUserDto) {
+  update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
     return this.usersService.update(id, updateUserDto);
   }
 
   @Patch('changerole/:id')
   @UseGuards(AuthGuard)
-  updateRole(@Param('id') id: number, @Body() updateUserDto: UpdateUserDto) {
+  updateRole(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
     return this.usersService.updateRole(id, updateUserDto);
   }
 
   @Delete(':id')
   @UseGuards(AuthGuard)
-  remove(@Param('id') id: number) {
+  remove(@Param('id') id: string) {
     return this.usersService.remove(id);
   }
 }

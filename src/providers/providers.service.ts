@@ -22,15 +22,15 @@ export class ProvidersService {
     return await this.providersRepository.find();
   }
 
-  findOne(id: number) {
+  findOne(id: string) {
     return `This action returns a #${id} provider`;
   }
 
-  update(id: number, updateProviderDto: UpdateProviderDto) {
+  update(id: string, updateProviderDto: UpdateProviderDto) {
     return `This action updates a #${id} provider`;
   }
 
-  async remove(id: number) {
+  async remove(id: string) {
     return await this.providersRepository.softDelete(id);
   }
 }

@@ -21,7 +21,7 @@ export class CashCutService {
     return await this.cashCutsRepository.find();
   }
 
-  async findOne(id: number) {
+  async findOne(id: string) {
     return await this.cashCutsRepository.findOneBy({ id });
   }
 
@@ -47,7 +47,7 @@ export class CashCutService {
     });
   }
 
-  async update(id: number, updateCashCutDto: UpdateCashCutDto) {
+  async update(id: string, updateCashCutDto: UpdateCashCutDto) {
     const cashcut = await this.cashCutsRepository.findOneBy({ id });
 
     if (!cashcut) {
@@ -60,7 +60,7 @@ export class CashCutService {
     });
   }
 
-  async remove(id: number) {
+  async remove(id: string) {
     return await this.cashCutsRepository.softDelete(id);
   }
 }

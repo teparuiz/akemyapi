@@ -9,9 +9,9 @@ import {
 
 @Entity()
 export class CashCut {
-  @PrimaryGeneratedColumn()
-  id: number;
-
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
+  
   @Column({ default: '' })
   description: string;
 

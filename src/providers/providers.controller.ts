@@ -30,22 +30,22 @@ export class ProvidersController {
 
   @Get(':id')
   @UseGuards(AuthGuard)
-  findOne(@Param('id') id: number) {
+  findOne(@Param('id') id: string) {
     return this.providersService.findOne(id);
   }
 
   @Patch(':id')
   @UseGuards(AuthGuard)
   update(
-    @Param('id') id: number,
+    @Param('id') id: string,
     @Body() updateProviderDto: UpdateProviderDto,
   ) {
-    return this.providersService.update(+id, updateProviderDto);
+    return this.providersService.update(id, updateProviderDto);
   }
 
   @Delete(':id')
   @UseGuards(AuthGuard)
-  remove(@Param('id') id: number) {
+  remove(@Param('id') id: string) {
     return this.providersService.remove(id);
   }
 }

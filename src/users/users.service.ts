@@ -24,11 +24,11 @@ export class UsersService {
     return await this.usersRepository.find();
   }
 
-  async findOne(id: number) {
+  async findOne(id: string) {
     return await this.usersRepository.findOneBy({ id });
   }
 
-  async update(id: number, UpdateUserDto: UpdateUserDto) {
+  async update(id: string, UpdateUserDto: UpdateUserDto) {
     const user = await this.usersRepository.findOneBy({ id });
 
     if (!user) {
@@ -47,7 +47,7 @@ export class UsersService {
     });
   }
 
-  async updateRole(id: number, UpdateUserDto: UpdateUserDto) {
+  async updateRole(id: string, UpdateUserDto: UpdateUserDto) {
     const user = await this.usersRepository.findOneBy({ id });
 
     if (!user) {
@@ -60,7 +60,7 @@ export class UsersService {
     });
   }
 
-  async remove(id: number) {
+  async remove(id: string) {
     return await this.usersRepository.softDelete(id);
   }
 }

@@ -32,19 +32,19 @@ export class CashCutController {
 
   @Get(':id')
   @UseGuards(AuthGuard)
-  findOne(@Param('id') id: number) {
+  findOne(@Param('id') id: string) {
     return this.cashCutService.findOne(id);
   }
 
   @Patch(':id')
   @UseGuards(AuthGuard)
-  update(@Param('id') id: number, @Body() updateCashCutDto: UpdateCashCutDto) {
+  update(@Param('id') id: string, @Body() updateCashCutDto: UpdateCashCutDto) {
     return this.cashCutService.update(id, updateCashCutDto);
   }
 
   @Delete(':id')
   @UseGuards(AuthGuard)
-  remove(@Param('id') id: number) {
+  remove(@Param('id') id: string) {
     return this.cashCutService.remove(id);
   }
 }

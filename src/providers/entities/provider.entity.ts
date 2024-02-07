@@ -7,8 +7,8 @@ import {
 
 @Entity()
 export class Provider {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   @Column({ unique: true })
   name: string;
