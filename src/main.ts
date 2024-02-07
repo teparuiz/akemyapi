@@ -5,6 +5,8 @@ declare const module: any;
 async function boostrap() {
   const app = await NestFactory.create(AppModule);
 
+  const port = process.env.PORT || 3000;
+
   app.setGlobalPrefix('api/v1');
 
   app.useGlobalPipes(
@@ -14,7 +16,7 @@ async function boostrap() {
       transform: true,
     }),
   );
-  await app.listen(3000);
+  await app.listen(port, '0.0.0.0');
 
   if (module.hot) {
     module.hot.accept();
