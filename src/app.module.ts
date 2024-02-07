@@ -13,11 +13,11 @@ import { StoreModule } from './store/store.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
-      port: 3307,
+      host: 'monorail.proxy.rlwy.net',
+      port: 39083,
       username: 'root',
-      password: 'root',
-      database: 'db_crud',
+      password: '5-5EHHAcGhF5hf1BeCach62cBAC-Ff1-',
+      database: 'railway',
       autoLoadEntities: true,
       synchronize: true,
     }),
