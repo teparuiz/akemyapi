@@ -7,6 +7,7 @@ async function boostrap() {
 
   app.setGlobalPrefix('api/v1');
   app.enableCors();
+
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
