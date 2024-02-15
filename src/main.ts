@@ -6,7 +6,7 @@ async function boostrap() {
   const app = await NestFactory.create(AppModule);
 
   app.setGlobalPrefix('api/v1');
-  app.enableCors();
+  // app.enableCors();
 
   app.useGlobalPipes(
     new ValidationPipe({
@@ -15,7 +15,7 @@ async function boostrap() {
       transform: true,
     }),
   );
-  await app.listen(3000, '0.0.0.0');
+  await app.listen(3000);
 
   if (module.hot) {
     module.hot.accept();
