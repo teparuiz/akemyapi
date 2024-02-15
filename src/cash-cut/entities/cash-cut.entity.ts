@@ -11,7 +11,7 @@ import {
 export class CashCut {
   @PrimaryGeneratedColumn('uuid')
   id: string;
-  
+
   @Column({ default: '' })
   description: string;
 
@@ -20,9 +20,6 @@ export class CashCut {
 
   @Column({ nullable: false })
   user: string;
-
-  @Column({ nullable: false })
-  yesterday: number;
 
   @Column({ nullable: false })
   startDay: number;
@@ -42,11 +39,8 @@ export class CashCut {
   @Column({ nullable: false })
   diffCashCredit: number;
 
-  @Column({ nullable: false })
-  total: number;
-
   @Column('json', { nullable: true })
-  shipments: { [key: string]: number };
+  shipments: [];
 
   @Column('json', { nullable: true })
   incomes: [];

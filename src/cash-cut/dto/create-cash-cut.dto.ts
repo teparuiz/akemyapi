@@ -22,9 +22,6 @@ export class CreateCashCutDto {
   user: string;
 
   @IsNumber()
-  yesterday: number;
-
-  @IsNumber()
   startDay: number;
 
   @IsNumber()
@@ -42,9 +39,9 @@ export class CreateCashCutDto {
   @IsNumber()
   diffCashCredit: number;
 
-  @IsObject()
+  @IsArray()
   @IsOptional()
-  shipments: { [key: string]: number };
+  shipments: [];
 
   @IsDateString()
   date: Date;
@@ -62,8 +59,4 @@ export class CreateCashCutDto {
 
   @IsObject()
   coins: { [key: string]: number };
-
-  @IsNumber()
-  @IsPositive()
-  total: number;
 }
