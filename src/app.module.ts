@@ -19,7 +19,7 @@ import { StoreModule } from './store/store.module';
       password: '5-5EHHAcGhF5hf1BeCach62cBAC-Ff1-',
       database: 'railway',
       autoLoadEntities: true,
-      synchronize: true,
+      synchronize: false,
     }),
     CatsModule,
     BreedsModule,
